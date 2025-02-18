@@ -1,0 +1,11 @@
+@import url(./root.css);
+:root {
+    /* Style de acordo com o Tema */
+    /* As cores colocadas aqui, são as cores padrão do sistema */
+
+    --tema-page_fundoPri: var(--color-bg-light_1);
+    --tema-page_fundoSec: var(--color-bg-dark_1);
+
+    --tema-texto_1: var(--color-base-black);
+    --tema-texto_2: var(--color-base-white);
+}

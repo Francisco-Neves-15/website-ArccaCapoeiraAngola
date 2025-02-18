@@ -1,0 +1,93 @@
+@import url(./root.css);
+@import url(./root-default.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--tema-page_fundoPri);
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+    background-color: black;
+}
+
+h1 {
+    color: var(--color-base-black);
+    font-weight: bold;
+    font-family: var(--font-stardosstencil);
+    letter-spacing: 4px;
+}
+
+h2 {
+    color: var(--color-base-black);
+    font-weight: bold;
+    font-family: var(--font-stardosstencil);
+    letter-spacing: 4px;
+}
+
+p {
+    color: var(--color-base-black);
+    font-weight: 500;
+    font-family: var(--font-poppins);
+}
+
+span {
+    color: var(--color-base-black);
+    font-weight: bold;
+    font-family: var(--font-poppins);
+}
+
+ul {
+    list-style: none;
+}
+ul li {
+    color: var(--color-base-black);
+    font-weight: 500;
+    font-family: var(--font-poppins);
+}
+
+.has_tp {
+    position: relative;
+    background-color: red;
+    width: 10%;
+}
+
+.has_tp_clickable {
+    position: relative;
+    cursor: pointer;
+}
+
+tooltip {
+    /* Estilo: Caixa */
+    background-color: var(--color-verde-arcca);
+    padding: 6px 16px;
+    border: 3px solid var(--color-vermelho-arcca);
+    border-radius: 8px;
+    /* Estilo: Texto */
+    color: var(--color-base-white);
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--font-poppins);
+    text-wrap: nowrap;
+    /* Estilo: Funcional */
+    position: absolute;
+    overflow: visible;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    top: 110%;
+    left: 50%;
+    /*  */
+    transform: translateX(-50%) rotateX(-90deg);
+}
+
+.has_tp:hover tooltip {
+    z-index: 1001;
+    opacity: 1;
+    transform: translateX(-50%) rotateX(0deg);
+}

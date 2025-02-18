@@ -1,0 +1,248 @@
+@import url(../css/root.css);
+@import url(../css/root-default.css);
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    /* background: var(--background-pre-gradient); */
+    /* background: var(--background-000toffft-10to100); */
+    background-color: #000000;
+    z-index: 100;
+}
+
+.inter_header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+/* Area da Logo */
+
+.area_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: var(--color-base-white);
+    margin-top: 20px;
+}
+
+.area_logo img {
+    scale: 0.8;
+    width: 90px;
+    height: auto;
+}
+
+/* Area da Titulo */
+
+.area_title {
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.area_title h1 {
+    width: 100%;
+    color: var(--color-base-white);
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+.area_title h2 {
+    width: 100%;
+    color: var(--color-base-white);
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+/* Area da Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 101;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    padding: 6px 12px;
+}
+
+.navbar ul li {
+    width: 100%;
+    color: var(--color-base-white);
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Menu de Hamburguer */
+
+.icon_menu {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    min-width: 40px;
+    min-height: 32px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 102;
+}
+
+.icon_menu_i {
+    background-color: var(--color-base-white);
+    width: 40px;
+    height: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+.icon_menu .icon_menu_i:nth-child(1) {
+    transform: rotate(0deg);
+    display: block;
+    position: static;
+}
+
+.icon_menu .icon_menu_i:nth-child(2) {
+    transform: rotate(0deg);
+    display: block;
+    position: static;
+    width: 100%;
+}
+
+.icon_menu .icon_menu_i:nth-child(3) {
+    transform: rotate(0deg);
+    display: block;
+    position: static;
+}
+
+/* Altera apenas se estiver ativo */
+
+.list_menu_activated .icon_menu_i:nth-child(1) {
+    transform: rotate(-135deg);
+    display: block;
+    position: absolute;
+}
+
+.list_menu_activated .icon_menu_i:nth-child(2) {
+    transform: rotate(0deg);
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    width: 0%;
+}
+
+.list_menu_activated .icon_menu_i:nth-child(3) {
+    transform: rotate(135deg);
+    display: block;
+    position: absolute;
+}
+
+/* Mobile ============================================================ */
+
+@media (max-width: 500px) {
+
+header {
+    height: 80px;
+}
+.inter_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Area da Logo */
+.area_logo {
+    width: 70px;
+    height: 70px;
+}
+.area_logo img {
+    scale: 0.8;
+    width: 70px;
+    height: auto;
+}
+
+/* Area da Titulo */
+.area_title {
+    padding: 4px 8px;
+}
+.area_title h1 {
+    width: 100%;
+    font-size: 24px;
+}
+.area_title h2 {
+    width: 100%;
+    color: var(--color-base-white);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Area da Navbar */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navbar ul {
+    z-index: 101;
+    position: fixed;
+    top: 0%;
+    right: 50%;
+    margin-top: -100%;
+    display: flex;
+    flex-direction: column ;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--color-verde-arcca);
+    gap: 16px !important;
+    padding: 32px 0px 32px 00px !important;
+    width: 60%;
+    height: auto;
+    transform: translateX(50%);
+    border-radius: 0 0 16px 16px;
+    transition: all 0.3s ease-in-out;
+}
+.navbar ul li {
+    width: 100%;
+    color: var(--color-base-white);
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Menu de Hamburguer */
+.icon_menu {
+    display: flex;
+}
+
+/* Navlist ativada ao Clique */
+
+.navlist_activated {
+    margin-top: 0 !important;
+}
+
+}
