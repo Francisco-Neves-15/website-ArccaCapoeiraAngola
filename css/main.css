@@ -16,28 +16,25 @@ body {
     background-color: black;
 }
 
+/* Algumas configurações Gerais */
+
 h1 {
-    color: var(--color-base-black);
     font-weight: bold;
     font-family: var(--font-stardosstencil);
     letter-spacing: 4px;
 }
 
 h2 {
-    color: var(--color-base-black);
-    font-weight: bold;
     font-family: var(--font-stardosstencil);
     letter-spacing: 4px;
 }
 
 p {
-    color: var(--color-base-black);
     font-weight: 500;
     font-family: var(--font-poppins);
 }
 
 span {
-    color: var(--color-base-black);
     font-weight: bold;
     font-family: var(--font-poppins);
 }
@@ -46,11 +43,11 @@ ul {
     list-style: none;
 }
 ul li {
-    color: var(--color-base-black);
     font-weight: 500;
     font-family: var(--font-poppins);
 }
 
+/* Elementos que possuem Tooltips */
 .has_tp {
     position: relative;
     background-color: red;
@@ -62,6 +59,7 @@ ul li {
     cursor: pointer;
 }
 
+/* Tag personalizada Tooltip */
 tooltip {
     /* Estilo: Caixa */
     background-color: var(--color-verde-arcca);
@@ -90,4 +88,25 @@ tooltip {
     z-index: 1001;
     opacity: 1;
     transform: translateX(-50%) rotateX(0deg);
+}
+
+/* Tag <main> quando no Desktop */
+main {
+    margin-top: 100px;
+}
+
+/* Mobile ============================================================ */
+
+@media (max-width: 500px) {
+
+h2 {
+    font-family: var(--font-stardosstencil);
+    letter-spacing: 2px;
+}
+
+/* Tag <main> quando no Mobile */
+main {
+    margin-top: 80px;
+}
+
 }

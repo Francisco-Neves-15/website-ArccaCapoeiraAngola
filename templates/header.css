@@ -1,15 +1,21 @@
 @import url(../css/root.css);
 @import url(../css/root-default.css);
 
+/* Cabeçalho | Header */
+
 header {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100px;
     /* background: var(--background-pre-gradient); */
     /* background: var(--background-000toffft-10to100); */
-    background-color: #000000;
+    transition: transform 0.3s ease-in-out;
     z-index: 100;
 }
+
+/* Divisão interna no Header */
 
 .inter_header {
     width: 100%;
@@ -19,6 +25,29 @@ header {
     align-items: center;
     padding-left: 32px;
     padding-right: 32px;
+    position: relative;
+}
+
+/* Configurações na Header e demais para quando ela não estiver no topo */
+
+/* Quando o usuário rola para baixo, esconde o header */
+.hide_header {
+    transform: translateY(-100%);
+}
+
+.header_nonTop {
+    background-color: var(--color-vermelho-arcca);
+    border: none;
+    border-radius: 0 0 16px 16px;
+}
+.header_nonTop .area_title h1 {
+    color: var(--color-base-white);
+}
+.header_nonTop .area_title h2 {
+    color: var(--color-base-white);
+}
+.header_nonTop .navbar ul li {
+    color: var(--color-base-white);
 }
 
 /* Area da Logo */
@@ -31,7 +60,7 @@ header {
     height: 90px;
     border-radius: 50%;
     background-color: var(--color-base-white);
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .area_logo img {
@@ -48,6 +77,10 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .area_title h1 {
@@ -90,7 +123,7 @@ header {
     width: 100%;
     color: var(--color-base-white);
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -164,15 +197,26 @@ header {
 
 @media (max-width: 500px) {
 
+/* Cabeçalho | Header */
 header {
     height: 80px;
 }
+
+/* Divisão interna no Header */
 .inter_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 16px;
     padding-right: 16px;
+}
+
+/* Configurações na Header e demais para quando ela não estiver no topo */
+.header_nonTop .navbar ul li {
+    color: var(--color-base-white);
+}
+.header_nonTop .icon_menu_i {
+    background-color: var(--color-base-white);
 }
 
 /* Area da Logo */
@@ -219,8 +263,10 @@ header {
     align-items: center;
     background-color: var(--color-verde-arcca);
     gap: 16px !important;
-    padding: 32px 0px 32px 00px !important;
-    width: 60%;
+    padding: 24px 0px 24px 00px !important;
+    min-width: 50%;
+    width: auto;
+    max-width: 60%;
     height: auto;
     transform: translateX(50%);
     border-radius: 0 0 16px 16px;
