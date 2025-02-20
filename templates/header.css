@@ -11,7 +11,7 @@ header {
     height: 100px;
     /* background: var(--background-pre-gradient); */
     /* background: var(--background-000toffft-10to100); */
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.1s ease-in-out;
     z-index: 100;
 }
 
@@ -121,6 +121,8 @@ header {
 
 .navbar ul li {
     width: 100%;
+    position: relative;
+    padding: 0px 8px;
     color: var(--color-base-white);
     font-weight: 600;
     font-size: 20px;
@@ -273,7 +275,7 @@ header {
     transition: all 0.3s ease-in-out;
 }
 .navbar ul li {
-    width: 100%;
+    width: auto;
     color: var(--color-base-white);
     font-weight: 600;
     font-size: 24px;

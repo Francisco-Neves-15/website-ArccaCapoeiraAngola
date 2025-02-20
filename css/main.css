@@ -13,7 +13,6 @@ body {
     height: auto;
     overflow-x: hidden;
     overflow-y: visible;
-    background-color: black;
 }
 
 /* Algumas configurações Gerais */
@@ -88,6 +87,31 @@ tooltip {
     z-index: 1001;
     opacity: 1;
     transform: translateX(-50%) rotateX(0deg);
+}
+
+/* ========= Animações que podem ser aplicadas a diversos elementos */
+
+/* Inicialmente, a linha começa com width 0 e é posicionada no centro */
+.hoverAnimation_botFromMid::before {
+    content: "";
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background-color: var(--color-base-white);
+    width: 0%;
+    height: 2px;
+    transition: all 0.3s ease-in-out, width 0.3s ease-in-out;
+    opacity: 0;
+}
+.hoverAnimation_botFromMid:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+
+/* ========== Classes para Aplicações Gerais */
+.cursorPointer {
+    cursor: pointer;
 }
 
 /* Tag <main> quando no Desktop */
