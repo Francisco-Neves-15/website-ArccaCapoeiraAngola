@@ -116,6 +116,22 @@ function handleHeaderOnScroll() {
     lastScrollTop = scrollTop;
 }
 
+// Função que Rola para o Topo da página
+function scrollToTop(element) {
+    const goTopType = element.getAttribute("aria-goTopType");
+
+    window.scrollTo({ top: 0, behavior: goTopType})
+
+    // if (goTopType === "smooth") {
+    //     window.scrollTo({ top: 0, behavior:"smooth" });
+    // } else if (goTopType === "instant") {
+    //     window.scrollTo({ top: 0, behavior:"instant" });
+    // } else {
+    //     window.scrollTo({ top: 0, behavior:"auto" });
+    // }
+
+}
+
 // Carregar os elementos ao carregar a página
 document.addEventListener("DOMContentLoaded", async () => {
     // Espera o Carregamento dos Elementos
@@ -133,4 +149,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Adiciona o evento de scroll chamando a função
     window.addEventListener("scroll", handleHeaderOnScroll);
     
+    // Adiciona o evento de Rolar a pagina para o Topo
+    document.querySelectorAll(".btn_goTop").forEach(button => {
+        button.addEventListener("click", () => scrollToTop(button));
+    });
+
 });

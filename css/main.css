@@ -38,6 +38,10 @@ span {
     font-family: var(--font-poppins);
 }
 
+a {
+    position: relative;
+}
+
 ul {
     list-style: none;
 }
@@ -61,13 +65,13 @@ ul li {
 /* Tag personalizada Tooltip */
 tooltip {
     /* Estilo: Caixa */
-    background-color: var(--color-verde-arcca);
-    padding: 6px 16px;
+    background-color: var(--color-overlay-black_1);
+    padding: 4px 12px;
     border: 3px solid var(--color-vermelho-arcca);
     border-radius: 8px;
     /* Estilo: Texto */
     color: var(--color-base-white);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     font-family: var(--font-poppins);
     text-wrap: nowrap;
@@ -84,6 +88,11 @@ tooltip {
 }
 
 .has_tp:hover tooltip {
+    z-index: 1001;
+    opacity: 1;
+    transform: translateX(-50%) rotateX(0deg);
+}
+.has_tp_clickable:hover tooltip {
     z-index: 1001;
     opacity: 1;
     transform: translateX(-50%) rotateX(0deg);
@@ -133,6 +142,11 @@ h2 {
 main {
     /* margin-top: 80px; */
     margin-top: 0px;
+}
+
+/* Tag personalizada Tooltip */
+tooltip {
+    display: none;
 }
 
 }
