@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     let autoSlideInterval;
 
-    const maxImages = 5; // Defina o número máximo de imagens no carrossel
+    const maxImages = 7; // Defina o número máximo de imagens no carrossel
 
     // Função para extrair a prioridade do nome da imagem
     function getPriorityFromFilename(filename) {
@@ -40,8 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const image = document.createElement("img");
                 image.classList.add("carrosel_imgs");
                 image.src = img.link;
-                image.style.maxWidth = "512px";
-                image.style.maxHeight = "512px";
                 listItem.appendChild(image);
                 carroselList.appendChild(listItem);
                 priorityCount++;
@@ -51,8 +49,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Preencher imagens aleatórias se houver espaço
-        randomImages.forEach(img => {
+        // Função para embaralhar um array (algoritmo Fisher-Yates)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Depois de coletar as imagens aleatórias, embaralhe
+        shuffleArray(randomImages);
+
+        // Agora, adicionamos apenas a quantidade necessária
+        randomImages.slice(0, maxImages - priorityCount).forEach(img => {
             const listItem = document.createElement("li");
             listItem.classList.add("carrosel_listImg_i");
             const image = document.createElement("img");
@@ -81,10 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Função para ir para uma imagem específica
     function goToImage(index) {
         currentIndex = index;
-        const offset = -currentIndex * 100;
+        const offset = -currentIndex * 100; // Garantindo que a transição esteja correta
         carroselList.style.transform = `translateX(${offset}%)`;
         updateActiveBall();
-    }
+    }    
 
     // Atualiza a bolinha ativa
     function updateActiveBall() {
@@ -121,16 +130,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Exemplo de dados para as imagens (com nomes com prioridade)
     const imagens = [
-        { link: "midia\\images\\normals\\imagem01-preferencia.jpg" },
-        { link: "midia\\images\\normals\\imagem02-aleatoria.webp" },
-        { link: "midia\\images\\normals\\imagem03-aleatoria.webp" },
-        { link: "midia\\images\\normals\\imagem04-aleatoria.webp" },
-        { link: "midia\\images\\normals\\imagem05-aleatoria.webp" },
-        { link: "midia\\images\\normals\\imagem06-preferencia.webp" },
-        { link: "midia\\images\\normals\\imagem07-aleatoria.webp" },
-        { link: "midia\\images\\normals\\imagem08-preferencia.webp" },
-        { link: "midia\\images\\normals\\imagem09-aleatoria.webp" },
-        { link: "midia\\images\\normals\\imagem10-aleatoria.webp" },
+        { link: "..\\midia\\images\\normals\\imagem01-preferencia.jpg" },
+        { link: "..\\midia\\images\\normals\\imagem02-aleatoria.webp" },
+        { link: "..\\midia\\images\\normals\\imagem03-aleatoria.webp" },
+        { link: "..\\midia\\images\\normals\\imagem04-aleatoria.webp" },
+        { link: "..\\midia\\images\\normals\\imagem05-aleatoria.webp" },
+        { link: "..\\midia\\images\\normals\\imagem06-preferencia.webp" },
+        { link: "..\\midia\\images\\normals\\imagem07-aleatoria.webp" },
+        { link: "..\\midia\\images\\normals\\imagem08-preferencia.webp" },
+        { link: "..\\midia\\images\\normals\\imagem09-aleatoria.webp" },
+        { link: "..\\midia\\images\\normals\\imagem10-aleatoria.webp" },
     ];
 
     // Preencher o carrossel com as imagens

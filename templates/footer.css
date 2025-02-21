@@ -1,2 +1,18 @@
 @import url(../css/root.css);
 @import url(../css/root-default.css);
+
+/* Cabeçalho | Header */
+
+footer {
+    position: static;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+    background-color: red;
+}
+
+/* Mobile ============================================================ */
+
+@media (max-width: 500px) {
+
+}
