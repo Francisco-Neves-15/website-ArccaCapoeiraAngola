@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+}
+
 body {
     background-color: var(--tema-page_fundoPri);
     width: 100%;
@@ -53,7 +57,6 @@ ul li {
 /* Elementos que possuem Tooltips */
 .has_tp {
     position: relative;
-    background-color: red;
     width: 10%;
 }
 
@@ -132,6 +135,10 @@ main {
 /* Mobile ============================================================ */
 
 @media (max-width: 500px) {
+
+body {
+    overflow-x: hidden;
+}
 
 h2 {
     font-family: var(--font-stardosstencil);

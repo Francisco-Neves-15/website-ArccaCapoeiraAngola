@@ -120,7 +120,13 @@ footer {
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
-.footer_social_list_i ion-icon {
+.footer_social_list_i a {
+    position: relative;
+}
+.footer_social_list_i a::before {
+    display: none;
+}
+.footer_social_list_i a ion-icon {
     position: relative;
     z-index: 103;
     color: var(--color-base-white);

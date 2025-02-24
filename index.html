@@ -33,7 +33,9 @@
     <!-- Chamando o CSS Index: Agenda -->
     <link rel="stylesheet" type='text/css' media="screen" href="./css/index-css/agenda-section.css">
     <!-- Chamando o CSS Index: Galeria -->
-    <link rel="stylesheet" type='text/css' media="screen" href="./css/index-css/galeria-section.css">
+    <link rel="stylesheet" type='text/css' media="screen" href="./css/index-css/galeria-section.css"> 
+    <!-- Chamando o CSS Apoiadores: Galeria -->
+    <link rel="stylesheet" type='text/css' media="screen" href="./css/index-css/apoiadores-section.css">
  
     <!-- Icone na guia do navegador -->
     <link rel="icon" type="image/x-icon" href="./midia/favicon/favicon_arcca_bgW_sr.ico">
@@ -92,18 +94,129 @@
             <div class="quemsomos_background">
                 <div class="qm_backgroundImg_overlay"></div>
                 <img class="qm_backgroundImg" src="./midia/images/backgrounds/background-wood_base.png" alt="Imagem de Fundo">
-                <div class="block_filter bf_1"></div>
-                <div class="block_filter bf_2"></div>
-                <div class="block_filter bf_3"></div>
+                <div class="faixaH_filter fh_1"></div>
+                <div class="faixaH_filter fh_2"></div>
+                <div class="faixaH_filter fh_3"></div>
             </div>
 
         </section>
+
         <section id="section-social" class="section_social">
+            <div class="section_social_content">
 
+                <div class="sec_social_area_g sec_social_area1">
+                    <div class="social_area1_g social_local_title">
+                        <h1>Onde estamos?</h1>
+                    </div>
+                    <div class="social_area1_g social_endereco">
+                        <p class="endereco_part1">São Paulo, São José do Rio Preto</p>
+                        <p class="endereco_part2">Jardim Nazareth, Emílio Nicoletti, 521, 15054-140</p>
+                    </div>
+                    <div class="social_area1_g social_map">
+                        <div class="map" id="">
+                            <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+                                <script>
+                                    (function () {
+                                        var setting = {"query":"Escola de Capoeira Angola ARCCA","width":400,"height":300,"satellite":true,"zoom":17,"placeId":"ChIJ6Sws2sBTvJQRcMduhG74JK0","cid":"0xad24f86e846ec770","coords":[-20.7841483,-49.3576467],"cityUrl":"/brazil/sao-jose-do-rio-preto-19787","cityAnchorText":"Mapa de São José do Rio Preto, Sao Paulo, Brasil","lang":"pt","queryString":"Escola de Capoeira Angola ARCCA","centerCoord":[-20.7841483,-49.3576467],"id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"1197133"};
+                                        var d = document;
+                                        var s = d.createElement('script');
+                                        s.src = 'https://1map.com/js/script-for-user.js?embed_id=1197133';
+                                        s.async = true;
+                                        s.onload = function (e) {
+                                            window.OneMap.initMap(setting)
+                                        };
+                                        var to = d.getElementsByTagName('script')[0];
+                                        to.parentNode.insertBefore(s, to);
+                                    })();
+                                </script>
+                            </div>
+                    </div>
+                    
+                </div>
+                <div class="sec_social_area_g sec_social_area2">
+                    <div class="social_area1_g social_img">
+                        <img src="midia/logos/logo_arcca_bgT.png" alt="">
+                    </div>
+                </div>
+                <div class="sec_social_area_g sec_social_area3">
+
+                    <div class="sec_social_area3_i">
+                        <div aria-scrollTarget="contato" class="social_area1_g social_social_title">
+                            <h1>Contate-nos!</h1>
+                        </div>
+                        <ul class="list_social">
+                            <li class="hoverAnimation_botFromMid list_social_i has_tp_clickable click_copiar">
+                                <p class=" has_copiedText">+55 17 0000-0000</p>
+                                <ion-icon class="social_phone" name="call-sharp"></ion-icon>
+                                <tooltip class="tooltip">Copiar</tooltip>
+                            </li>
+                            <li class="hoverAnimation_botFromMid list_social_i has_tp_clickable">
+                                <a class="" href="#" target="_blank">+55 17 00000-0000</a>
+                                <ion-icon class="social_whatsapp" name="logo-whatsapp"></ion-icon>
+                                <tooltip class="tooltip">Ir para Whatsapp</tooltip>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sec_social_area3_i">
+                        <div class="social_area1_g social_social_title">
+                            <h1>Veja mais!</h1>
+                        </div>
+                        <ul class="list_social">
+                            <li class="hoverAnimation_botFromMid list_social_i has_tp_clickable click_copiar">
+                                <a class="" href="https://www.instagram.com/arcca.capoeira.angola/" target="_blank">arcca.capoeira.angola</a>
+                                <ion-icon class="social_instagram" name="logo-instagram"></ion-icon>
+                                <tooltip class="tooltip">Ir para Instagram</tooltip>
+                            </li>
+                            <li class="hoverAnimation_botFromMid list_social_i has_tp_clickable click_copiar">
+                                <a class="" href="#" target="_blank">arcca.capoeira.angola</a>
+                                <ion-icon class="social_tiktok" name="logo-tiktok"></ion-icon>
+                                <tooltip class="tooltip">Ir para TikTok</tooltip>
+                            </li>
+                            <li class="hoverAnimation_botFromMid list_social_i has_tp_clickable click_copiar">
+                                <a class="" href="#" target="_blank">arcca.capoeira.angola</a>
+                                <ion-icon class="social_youtube" name="logo-youtube"></ion-icon>
+                                <tooltip class="tooltip">Ir para Youtube</tooltip>
+                            </li>
+                            <li class="hoverAnimation_botFromMid list_social_i has_tp_clickable click_copiar">
+                                <a class="" href="#" target="_blank">arcca.capoeira.angola</a>
+                                <ion-icon class="social_facebook" name="logo-facebook"></ion-icon>
+                                <tooltip class="tooltip">Ir para Facebook</tooltip>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
         </section>
+
+        <section id="section-apoiadores" class="section_apoiadores">
+            <div class="apoiadores_title">
+                <h1>Apoiadores: </h1>
+            </div>
+            <div class="section_apoiadores_content">
+                <div class="background_sec_apoiadores">
+                    <div class="ap_backgroundImg_overlay"></div>
+                    <img class="ap_backgroundImg" src="midia/images/backgrounds/background-brickwall_base.png" alt="">
+                    <div class="faixaV_filter fv_1"></div>
+                    <div class="faixaV_filter fv_2"></div>
+                    <div class="faixaV_filter fv_3"></div>
+                </div>
+                <ul class="list_apoiadores">
+                    <li class="list_apoiadores_i">
+                        <a href="">
+                            <img src="midia/logos/logo_arcca_bgW_round.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         <section id="section-agenda" class="section_agenda">
-
+            <h1 aria-scrollTarget="agenda">Agenda</h1>
         </section>
+
         <section id="section-galeria" class="section_galeria">
 
         </section>

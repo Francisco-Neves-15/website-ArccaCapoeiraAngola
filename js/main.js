@@ -117,10 +117,36 @@ function handleHeaderOnScroll() {
 }
 
 // Função que Rola para o Topo da página
-function scrollToTop(element) {
-    const goTopType = element.getAttribute("aria-goTopType");
+function scrollTo_customLocal(element) {
+    let scrollTo_settings = element.getAttribute("aria-scrollTo-settings");
 
-    window.scrollTo({ top: 0, behavior: goTopType})
+    // Dividir o valor para obter o local e o tipo
+    let local = scrollTo_settings.split("-")[0];
+    let type = scrollTo_settings.split("-")[1];
+
+    console.warn(local, type);
+
+    if (local === "top") {
+        // Se o local for 'top', rola até o topo da página
+        window.scrollTo({ top: 0, behavior: type });
+    } else {
+        // Caso contrário, buscar o elemento com aria-scrollTarget correspondente
+        let targetElement = document.querySelector(`[aria-scrollTarget="${local}"]`);
+
+        if (targetElement) {
+            // Obter a posição do elemento na página
+            let elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+
+            // Adicionar um deslocamento de -100px | Para cima = "-" ou para baixo = "+"
+            let offset = -100;
+            let scrollPosition = elementPosition + offset;
+
+            // Rola suavemente até a posição calculada
+            window.scrollTo({ top: scrollPosition, behavior: type });
+        } else {
+            console.warn("Elemento com o atributo aria-scrollTarget não encontrado.");
+        }
+    }
 
     // if (goTopType === "smooth") {
     //     window.scrollTo({ top: 0, behavior:"smooth" });
@@ -129,7 +155,29 @@ function scrollToTop(element) {
     // } else {
     //     window.scrollTo({ top: 0, behavior:"auto" });
     // }
+}
 
+
+// Função que copia o texto
+function act_copiarTexto(event) {
+    // Procura o elemento clicado mais próximo da classe
+    let clickableElement = event.target.closest('.click_copiar')
+    // Pega o elemento que possui o texto a ser copiado com a classe
+    let textElement = clickableElement.querySelector('.has_copiedText')
+
+    // Se o elemento existir
+    if (textElement) {
+        let text = textElement.textContent || textElement.innerText;
+
+        // Usa a API para copiar o texto
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                console.log("Texto copiado:", text)
+            })
+            .catch(err => {
+                console.error("Falha ao Copiar o Texto")
+            })
+    }
 }
 
 // Carregar os elementos ao carregar a página
@@ -138,7 +186,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     await load_element("header");
     await load_element("footer");
 
-    // Agora o elemento existe no DOM e podemos adicionar o evento
+    // Evento para ativar o Menu no Mobile
     const btn_navbar_menu = document.getElementById("navbar-menu");
     if (btn_navbar_menu) {
         btn_navbar_menu.addEventListener("click", () => toggle_navbarMenu("normal"));
@@ -150,8 +198,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     window.addEventListener("scroll", handleHeaderOnScroll);
     
     // Adiciona o evento de Rolar a pagina para o Topo
-    document.querySelectorAll(".btn_goTop").forEach(button => {
-        button.addEventListener("click", () => scrollToTop(button));
+    document.querySelectorAll(".btn_goToCustomLocal").forEach(button => {
+        button.addEventListener("click", () => scrollTo_customLocal(button));
     });
+
+    // Evento para copiar o texto
+    let btns_copiarTexto = document.querySelectorAll(".click_copiar")
+    btns_copiarTexto.forEach(btn => {
+        btn.addEventListener("click", (event) => act_copiarTexto(event));
+    });
+    
 
 });
