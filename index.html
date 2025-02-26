@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<html lang="pt-BR" theme="light" dir="ltr" version="alpha 0.1" page="index">
+<html device="" lang="pt-BR" theme="light" dir="ltr" version="alpha 0.1" page="index">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -214,7 +214,9 @@
         </section>
 
         <section id="section-agenda" class="section_agenda">
-            <h1 aria-scrollTarget="agenda">Agenda</h1>
+            <div class="agenda_title">
+                <h1 aria-scrollTarget="agenda">Agenda</h1>
+            </div>
         </section>
 
         <section id="section-galeria" class="section_galeria">
@@ -222,7 +224,7 @@
             <div class="section_galeria_content">
                 
                 <div class="galeria_title">
-                    <h1>Nosso Espaço</h1>
+                    <h1 aria-scrollTarget="nossoespaco">Nosso Espaço</h1>
                 </div>
 
                 <div class="galeria_area_g">
@@ -296,7 +298,7 @@
                     <div class="area_btn_vermais">
                         <div aria-status="false" id="btn_galeria-verMais" class="btn_galeria_verMais">
                             <ion-icon id="i_arrowUpL" class="icon_arrowUp rotateP180l" name="chevron-up-outline"></ion-icon>
-                            <p>Ver mais</p>
+                            <p id="text_galeriaVerMais" aria-pre-p1="Ver mais" aria-pre-p2="Ver menos">Ver mais</p>
                             <ion-icon id="i_arrowUpR" class="icon_arrowUp rotateP180r" name="chevron-up-outline"></ion-icon>
                         </div>
                     </div>

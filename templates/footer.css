@@ -7,7 +7,7 @@ footer {
     position: relative;
     width: 100%;
     height: 100px;
-    z-index: 100;
+    z-index: 200;
     background-color: var(--color-vermelho-arcca);
     border: none;
     border-radius: 16px 16px 0 0;
@@ -203,12 +203,13 @@ footer {
     transition: all .3s ease-in-out;
     cursor: pointer;
 }
-.footer_goTop_icon {
-    color: var(--color-base-white);
-    font-size: 24px;
-}
 .footer_goTop_text {
-    display: none;
+    display: flex !important; 
+    position: relative;
+    z-index: 103;
+    color: var(--color-base-white);
+    font-size: 16px;
+    padding: 0px 12px;
 }
 
 .area_goTop:hover {
@@ -295,15 +296,13 @@ footer {
 .area_goTop {
     padding: 8px 16px;
 }
-.footer_goTop_icon {
-    display: none;
-}
 .footer_goTop_text {
     display: flex !important; 
     position: relative;
     z-index: 103;
     color: var(--color-base-white);
-    font-size: 16px;
+    font-size: 12px;
+    padding: 0px 6px;
 }
 
 }

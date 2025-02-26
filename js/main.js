@@ -29,6 +29,19 @@ async function detec_lang() {
     
 }
 
+async function detec_device() {
+    let htmlTag = document.documentElement;
+    // Verifica se a largura da tela é 500px ou menor
+    if (window.innerWidth <= 500) {
+        console.log("Tela de Mobile")
+        htmlTag.setAttribute("device", "mobile");
+    } else if (window.innerWidth >= 501) {
+        console.log("Tela de Desktop")
+        htmlTag.setAttribute("device", "desktop");
+    }
+    open_galeriaVerMais("default")
+}
+
 //
 let global_status_btn = false
 // Função que altenar ao clicar no Menu para Mobile
@@ -116,13 +129,37 @@ function handleHeaderOnScroll() {
     lastScrollTop = scrollTop;
 }
 
-// Função que Rola para o Topo da página
-function scrollTo_customLocal(element) {
-    let scrollTo_settings = element.getAttribute("aria-scrollTo-settings");
+// Função que rola para um local específico com base em um elemento ou identificador de texto
+function scrollTo_customLocal(elementOrText) {
+    let local, type;
+    
+    // Se o parâmetro for uma string, buscar o elemento com aria-scrollTarget correspondente
+    if (typeof elementOrText === "string") {
+        let targetElement = document.querySelector(`[aria-scrollTarget="${elementOrText}"]`);
+        
+        if (!targetElement) {
+            console.warn(`Elemento com aria-scrollTarget="${elementOrText}" não encontrado.`);
+            return;
+        }
 
-    // Dividir o valor para obter o local e o tipo
-    let local = scrollTo_settings.split("-")[0];
-    let type = scrollTo_settings.split("-")[1];
+        // Define local e tipo para rolagem
+        local = elementOrText; 
+        type = "smooth"; // Define um comportamento padrão
+    } 
+    // Se for um elemento, pegar as configurações do atributo aria
+    else if (elementOrText instanceof HTMLElement) {
+        let scrollTo_settings = elementOrText.getAttribute("aria-scrollTo-settings");
+
+        if (!scrollTo_settings) {
+            console.warn("Elemento não possui o atributo 'aria-scrollTo-settings'.");
+            return;
+        }
+
+        [local, type] = scrollTo_settings.split("-");
+    } else {
+        console.warn("Parâmetro inválido. Deve ser um elemento HTML ou um identificador de texto.");
+        return;
+    }
 
     console.warn(local, type);
 
@@ -130,31 +167,23 @@ function scrollTo_customLocal(element) {
         // Se o local for 'top', rola até o topo da página
         window.scrollTo({ top: 0, behavior: type });
     } else {
-        // Caso contrário, buscar o elemento com aria-scrollTarget correspondente
+        // Buscar o elemento de destino
         let targetElement = document.querySelector(`[aria-scrollTarget="${local}"]`);
 
         if (targetElement) {
             // Obter a posição do elemento na página
             let elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
 
-            // Adicionar um deslocamento de -100px | Para cima = "-" ou para baixo = "+"
+            // Adicionar um deslocamento de -100px (Para cima = "-" | Para baixo = "+")
             let offset = -100;
             let scrollPosition = elementPosition + offset;
 
             // Rola suavemente até a posição calculada
             window.scrollTo({ top: scrollPosition, behavior: type });
         } else {
-            console.warn("Elemento com o atributo aria-scrollTarget não encontrado.");
+            console.warn(`Elemento com aria-scrollTarget="${local}" não encontrado.`);
         }
     }
-
-    // if (goTopType === "smooth") {
-    //     window.scrollTo({ top: 0, behavior:"smooth" });
-    // } else if (goTopType === "instant") {
-    //     window.scrollTo({ top: 0, behavior:"instant" });
-    // } else {
-    //     window.scrollTo({ top: 0, behavior:"auto" });
-    // }
 }
 
 
@@ -186,6 +215,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     await load_element("header");
     await load_element("footer");
 
+    // Ativa as funções para Detectar informações
+    detec_device()
+
     // Evento para ativar o Menu no Mobile
     const btn_navbar_menu = document.getElementById("navbar-menu");
     if (btn_navbar_menu) {
@@ -208,5 +240,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         btn.addEventListener("click", (event) => act_copiarTexto(event));
     });
     
+    // Escutador para detectar mudanças na largura da tela
+    window.addEventListener('resize', () => {
+        detec_device()
+    });
 
 });

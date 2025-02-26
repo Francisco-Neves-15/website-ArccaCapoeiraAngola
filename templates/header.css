@@ -12,7 +12,7 @@ header {
     /* background: var(--background-pre-gradient); */
     /* background: var(--background-000toffft-10to100); */
     transition: transform 0.1s ease-in-out;
-    z-index: 100;
+    z-index: 200;
 }
 
 /* Divisão interna no Header */

@@ -257,13 +257,13 @@
     width: 100%;
     height: auto;
     padding: 8px;
-    display: flex;
+    display: none;
     transform: translateY(-50%);
 }
 .btn_galeria_verMais {
     height: 100%;
     width: 100%;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
@@ -551,10 +551,10 @@
     background-color: var(--color-vermelho-arcca);
 }
 
-}
-
 /* Area para Ver mais da Galeria */
 
-.btn_galeria_verMais {
+.area_btn_vermais {
     display: flex;
+}
+
 }

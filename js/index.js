@@ -91,7 +91,7 @@ const carrosseis = [
     }
 ];
 
-function open_galeriaVerMais() {
+function open_galeriaVerMais(tipo) {
     let class_rotateP180l = "rotateP180l"
     let class_rotateP180r = "rotateP180r"
     let icon_arrowUpL = document.getElementById("i_arrowUpL")
@@ -101,11 +101,43 @@ function open_galeriaVerMais() {
     let config_big = "220vh"
     let config_small = "140vh"
 
+    let config_desktop = "80vh"
+
     let btn_status = btn_galeria_verMais.getAttribute("aria-status")
 
     let galeria_areaG2_3 = document.querySelector(".galeria_areaG2_3")
     
-    if (btn_status === "false") {
+    let text_galeriaVerMais = document.getElementById("text_galeriaVerMais") 
+    let pre_text_p1 = text_galeriaVerMais.getAttribute("aria-pre-p1")
+    let pre_text_p2 = text_galeriaVerMais.getAttribute("aria-pre-p2")
+    
+    let htmlTag = document.documentElement;
+    let device = htmlTag.getAttribute("device");
+
+    // Apenas volta para configuração padrão se encontrar
+    if (tipo === "default") {
+        console.log("ASDASDASD")
+        // Arruma o Tamanho
+        if (device === "desktop") {
+            section_galeria.style.height = config_desktop
+            section_galeria.style.maxHeight = config_desktop
+        } else if (device === "mobile") {
+            section_galeria.style.height = config_small
+            section_galeria.style.maxHeight = config_small
+        }
+        // Gira os Icones
+        icon_arrowUpL.classList.add(class_rotateP180l)
+        icon_arrowUpR.classList.add(class_rotateP180r)
+        // Altera o Status
+        btn_galeria_verMais.setAttribute("aria-status", "true")
+        // Mostra a Parte escondida
+        galeria_areaG2_3.style.display = "flex"
+        // Altera o Texto Referente
+        text_galeriaVerMais.textContent = pre_text_p1
+    }
+
+    if (btn_status === "false" && device === "mobile") {
+        console.log("111")
         // Aumenta o Tamanho
         section_galeria.style.height = config_big
         section_galeria.style.maxHeight = config_big
@@ -116,7 +148,10 @@ function open_galeriaVerMais() {
         btn_galeria_verMais.setAttribute("aria-status", "true")
         // Mostra a Parte escondida
         galeria_areaG2_3.style.display = "flex"
-    } else if (btn_status === "true") {
+        // Altera o Texto Referente
+        text_galeriaVerMais.textContent = pre_text_p2
+    } else if (btn_status === "true" && device === "mobile") {
+        console.log("222")
         // Aumenta o Tamanho
         section_galeria.style.height = config_small
         section_galeria.style.maxHeight = config_small
@@ -127,22 +162,35 @@ function open_galeriaVerMais() {
         btn_galeria_verMais.setAttribute("aria-status", "false")
         // Mostra a Parte escondida
         galeria_areaG2_3.style.display = "none"
+        // Altera o Texto Referente
+        text_galeriaVerMais.textContent = pre_text_p1
     }
+
     // Espera 250ms antes de rolar para o elemento
     setTimeout(() => {
         let elementPosition = btn_galeria_verMais.getBoundingClientRect().top + window.scrollY;
         elementPosition = elementPosition - 700
-        window.scrollTo({ top: elementPosition, behavior: "smooth" });
+        if (device === "mobile") {
+            window.scrollTo({ top: elementPosition, behavior: "smooth" });
+        }
     }, 250);
+
+    // Obtém a altura computada em pixels
+    // let computedHeightPx = parseFloat(window.getComputedStyle(section_galeria).height);
+
+    // Obtém a altura total da viewport
+    // let viewportHeight = window.innerHeight;
+
+    // Converte para vh
+    // let computedHeightVh = (computedHeightPx / viewportHeight) * 100;
 }
 
 // Pegando o ID do botão para ver mais
 const btn_galeria_verMais = document.getElementById("btn_galeria-verMais")
 
-// Iniciar ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
     populate_galeriaCarossel(carrosseis);
 
     // Escutador da função de ver mais a galeria
-    btn_galeria_verMais.addEventListener('click', open_galeriaVerMais)
+    btn_galeria_verMais.addEventListener('click', open_galeriaVerMais);
 });
