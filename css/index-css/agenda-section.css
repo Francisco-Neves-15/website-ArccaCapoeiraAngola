@@ -1,0 +1,24 @@
+@import url(../root.css);
+@import url(../root-default.css);
+
+/* Area da Galeria */
+
+.section_agenda {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-color: red;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 8px;
+}
+
+
+
+/* Mobile ============================================= */
+
+@media (max-width: 500px) {
+
+
+
+}

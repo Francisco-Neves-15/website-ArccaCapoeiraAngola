@@ -116,7 +116,6 @@ function open_galeriaVerMais(tipo) {
 
     // Apenas volta para configuração padrão se encontrar
     if (tipo === "default") {
-        console.log("ASDASDASD")
         // Arruma o Tamanho
         if (device === "desktop") {
             section_galeria.style.height = config_desktop
