@@ -180,7 +180,7 @@
     box-shadow: 0 0 100px 12px #000000;
 }
 
-.carrosel_listImg {
+.carrosel_main_listImg {
     list-style: none;
     display: flex;
     transition: transform 0.3s ease;
@@ -248,6 +248,7 @@
     opacity: 1;
 }
 
+/* Mobile ============================================= */
 
 @media (max-width: 500px) {
 

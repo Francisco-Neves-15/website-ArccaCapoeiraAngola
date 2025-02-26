@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const carroselList = document.querySelector(".carrosel_listImg");
+    const carroselList = document.getElementById("carrosel_main_listImg");
     const carroselBalls = document.querySelector(".carrosel_balls");
     const prevBtn = document.getElementById("carrosel_prev");
     const nextBtn = document.getElementById("carrosel_next");
@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Atualiza a bolinha ativa
-        updateActiveBall();
-    }
+            updateActiveBall();
+        }
 
     // Função para ir para uma imagem específica
     function goToImage(index) {

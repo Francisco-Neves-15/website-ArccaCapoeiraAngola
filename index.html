@@ -69,7 +69,7 @@
                 <div class="sec_quemsomos_area2">
                     <div class="quemsomos_carrosel">
                         <div class="carrosel">
-                            <ul class="carrosel_listImg">
+                            <ul id="carrosel_main_listImg" class="carrosel_main_listImg">
                                 <!-- Imagens auto-adicionadas -->
                                 <!-- 
                                 <li class="carrosel_listImg_i">
@@ -198,7 +198,7 @@
             <div class="section_apoiadores_content">
                 <div class="background_sec_apoiadores">
                     <div class="ap_backgroundImg_overlay"></div>
-                    <img class="ap_backgroundImg" src="midia/images/backgrounds/background-brickwall_base.png" alt="">
+                    <img class="ap_backgroundImg" src="./midia/images/backgrounds/background-brickwall_base.png" alt="">
                     <div class="faixaV_filter fv_1"></div>
                     <div class="faixaV_filter fv_2"></div>
                     <div class="faixaV_filter fv_3"></div>
@@ -206,7 +206,7 @@
                 <ul class="list_apoiadores">
                     <li class="list_apoiadores_i">
                         <a href="">
-                            <img src="midia/logos/logo_arcca_bgW_round.png" alt="">
+                            <img src="./midia/logos/logo_arcca_bgW_round.png" alt="">
                         </a>
                     </li>
                 </ul>
@@ -219,11 +219,104 @@
 
         <section id="section-galeria" class="section_galeria">
 
+            <div class="section_galeria_content">
+                
+                <div class="galeria_title">
+                    <h1>Nosso Espaço</h1>
+                </div>
+
+                <div class="galeria_area_g">
+
+                    <!-- Area 1 -->
+                    <div class="galeria_area_g2 galeria_areaG2_1">
+                        <div class="gal_areaG_desc">
+                            <p class="gal_areaG_desc_p1">03 de Agosto</p>
+                            <p class="gal_areaG_desc_p2">Dia do Capoeirista</p>
+                        </div>
+                        <div class="gal_areaG_midia">
+                            <video preload="auto" controls src="./midia/videos/video-DiaDoCapoeirista.mp4"></video>
+                        </div>
+                    </div>
+
+                    <!-- Area 2 -->
+                    <div class="galeria_area_2 galeria_areaG2_2">
+
+                        <div class="galeria_carrosel galeria_carrosel_1">
+                            <ul id="gCarrosel1_listImg" class="gCarrosel_listImg gCarrosel1_listImg">
+                                <!-- Imagens auto-adicionadas -->
+                                
+                                <li class="gCarrosel_listImg_i gCarrosel1_listImg_i">
+                                    <img id="autofill-gCarrosel1-1" class="gCarrosel_imgs gCarrosel1_imgs" src="midia/images/normals/imagem01-preferencia.jpg" alt="">
+                                </li>
+                               
+                            </ul>
+                            <div class="gCarrosel_options gCarrosel1_options">
+                                <ion-icon name="arrow-back-outline" id="gCarrosel1_prev"></ion-icon>
+                                <ion-icon name="arrow-forward-outline" id="gCarrosel1_next"></ion-icon>
+                            </div>
+                            <div class="gCarrosel_balls gCarrosel1_balls">
+                                <!-- Bolinhas do carrossel -->
+                                <!-- <div class="gCarrosel_ball gCarrosel1_ball"></div> -->
+                            </div>
+                        </div>
+
+                        <div class="galeria_carrosel galeria_carrosel_2">
+                            <ul id="gCarrosel2_listImg" class="gCarrosel_listImg gCarrosel2_listImg">
+                                <!-- Imagens auto-adicionadas -->
+                                
+                                <li class="gCarrosel_listImg_i gCarrosel2_listImg_i">
+                                    <img id="autofill-gCarrosel2-1" class="gCarrosel_imgs gCarrosel2_imgs" src="midia/images/normals/imagem01-preferencia.jpg" alt="">
+
+                                </li>
+                               
+                            </ul>
+                            <div class="gCarrosel_options gCarrosel2_options">
+                                <ion-icon name="arrow-back-outline" id="gCarrosel2_prev"></ion-icon>
+                                <ion-icon name="arrow-forward-outline" id="gCarrosel2_next"></ion-icon>
+                            </div>
+                            <div class="gCarrosel_balls gCarrosel2_balls">
+                                <!-- Bolinhas do carrossel -->
+                                <!-- <div class="gCarrosel_ball gCarrosel2_ball"></div> -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Area 3 -->
+                    <div class="galeria_area_g2 galeria_areaG2_3">
+                        <div class="gal_areaG_desc">
+                            <p class="gal_areaG_desc_p1">Assista!</p>
+                            <p class="gal_areaG_desc_p2">É um de nossos jogos!</p>
+                        </div>
+                        <div class="gal_areaG_midia">
+                            <video preload="auto" controls src="./midia/videos/video-DiaDoCapoeirista.mp4"></video>
+                        </div>
+                    </div>
+
+                    <div class="area_btn_vermais">
+                        <div aria-status="false" id="btn_galeria-verMais" class="btn_galeria_verMais">
+                            <ion-icon id="i_arrowUpL" class="icon_arrowUp rotateP180l" name="chevron-up-outline"></ion-icon>
+                            <p>Ver mais</p>
+                            <ion-icon id="i_arrowUpR" class="icon_arrowUp rotateP180r" name="chevron-up-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="galeira_background">
+                <div class="galeria_backgroundImg_overlay"></div>
+                <img class="galeria_backgroundImg" src="./midia/images/backgrounds/background-brickwall_base.png" alt="">
+                <div class="faixaV2_filter fv2_1"></div>
+                <div class="faixaV2_filter fv2_2"></div>
+                <div class="faixaV2_filter fv2_3"></div>
+            </div>
+
+
         </section>
 
     </main>
-
-    <div style="height: 100vh;"></div>
 
     <footer id="footer"></footer>
 

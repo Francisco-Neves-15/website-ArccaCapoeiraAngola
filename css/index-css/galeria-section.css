@@ -1,0 +1,560 @@
+@import url(../root.css);
+@import url(../root-default.css);
+
+/* Area da Galeria */
+
+.section_galeria {
+    width: 100%;
+    height: 80vh;
+    max-height: 80vh;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.section_galeria_content {
+    z-index: 30;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 8px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px;
+    overflow: hidden;
+}
+
+/* Area do Titulo */
+
+.galeria_title {
+    width: 100%;
+    padding: 8px;
+}
+
+.galeria_title h1 {
+    color: var(--color-base-white);
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+/* Parte da Galeria */
+
+.galeria_area_g {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+/* Partes Lateriais */
+
+.galeria_area_g2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 4px;
+}
+.gal_areaG_desc {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.gal_areaG_desc p {
+    color: var(--color-base-white);
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.gal_areaG_midia {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gal_areaG_midia video {
+    width: 90%;
+    box-shadow: 0px 0px 20px 5px #000000;
+}
+
+
+/* Partes Central */
+
+.galeria_area_2 {
+    max-width: 40%;
+    height: 100%;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Container principal do carrossel */
+.galeria_carrosel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    max-width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px 5px #000000;
+}
+
+/* Lista de imagens */
+.gCarrosel_listImg {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cada item da lista */
+.gCarrosel_listImg_i {
+    flex: 0 0 100%;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Ajuste das imagens */
+.gCarrosel_imgs {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Botões de navegação */
+.gCarrosel_options {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 6px;
+    z-index: +1;
+}
+
+.gCarrosel_options ion-icon {
+    color: var(--color-base-white);
+    font-size: 20px;
+    background-color: var(--color-overlay-black_1);
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.gCarrosel_options ion-icon:hover {
+    color: var(--color-amarelo-arcca);
+}
+
+/* Bolinhas de navegação */
+.gCarrosel_balls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.gCarrosel_ball {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-base-white);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.gCarrosel_ball.active {
+    background-color: var(--color-amarelo-arcca);
+    opacity: 1;
+}
+
+/* Area da Imagem personalizada com filtros */
+
+.galeira_background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 24;
+    top: 0;
+    left: 0;
+}
+
+.galeria_backgroundImg_overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 22;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-overlay-black_1);
+    box-shadow: inset 0 0 500px 20px #000000fb;
+}
+
+.galeria_backgroundImg {
+    filter: grayscale(100%);
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.faixaV2_filter {
+    width: 33.3%;
+    height: 100%;
+    z-index: 21;
+    position: absolute;
+    top: 0;
+    opacity: 0.6;
+}
+.fv2_1 {
+    left: 0;
+    background-color: var(--color-verde-arcca);
+}
+.fv2_2 {
+    left: 33.3%;
+    background-color: var(--color-amarelo-arcca);
+}
+.fv2_3 {
+    left: 66.3%;
+    background-color: var(--color-vermelho-arcca);
+}
+
+/* Area para Ver mais da Galeria */
+
+.area_btn_vermais {
+    z-index: 30;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    display: flex;
+    transform: translateY(-50%);
+}
+.btn_galeria_verMais {
+    height: 100%;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.btn_galeria_verMais p {
+    text-decoration: none;
+    color: var(--color-base-white);
+    font-size: 16px;
+    font-weight: 500;
+}
+.btn_galeria_verMais ion-icon {
+    color: var(--color-base-white);
+    font-size: 16px;
+    scale: 1.5;
+    transition: all .3s ease-in-out;
+}
+
+.rotateP180l {
+    transform: rotate(-180deg);
+    transition: all .3s ease-in-out;
+}
+.rotateP180r {
+    transform: rotate(180deg);
+    transition: all .3s ease-in-out;
+}
+
+/* Mobile ============================================= */
+
+@media (max-width: 500px) {
+
+/* Area da Galeria */
+
+.section_galeria {
+    width: 100%;
+    height: 140vh;
+    max-height: 200vh;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+.section_galeria_content {
+    z-index: 30;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 4px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+/* Area do Titulo */
+
+.galeria_title {
+    width: 100%;
+    padding: 4px;
+}
+
+.galeria_title h1 {
+    font-size: 24px;
+}
+
+/* Parte da Galeria */
+
+.galeria_area_g {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 42px;
+    padding: 4px;
+}
+
+/* Partes Lateriais */
+
+.galeria_area_g2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.galeria_areaG2_1 {
+    order: 2;
+}
+.galeria_areaG2_2 {
+    order: 1;
+}
+.galeria_areaG2_3 {
+    order: 3;
+    display: none;
+}
+
+.gal_areaG_desc {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.gal_areaG_desc p {
+    color: var(--color-base-white);
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.gal_areaG_midia {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gal_areaG_midia video {
+    width: 70%;
+    box-shadow: 0px 0px 20px 5px #000000;
+}
+
+
+/* Partes Central */
+
+.galeria_area_2 {
+    max-width: 100%;
+    height: 100%;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Container principal do carrossel */
+.galeria_carrosel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    max-width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px 5px #000000;
+}
+
+/* Lista de imagens */
+.gCarrosel_listImg {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cada item da lista */
+.gCarrosel_listImg_i {
+    flex: 0 0 100%;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Ajuste das imagens */
+.gCarrosel_imgs {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Botões de navegação */
+.gCarrosel_options {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 6px;
+    z-index: +1;
+}
+
+.gCarrosel_options ion-icon {
+    color: var(--color-base-white);
+    font-size: 16px;
+    background-color: var(--color-overlay-black_1);
+    border-radius: 50%;
+    padding: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.gCarrosel_options ion-icon:hover {
+    color: var(--color-amarelo-arcca);
+}
+
+/* Bolinhas de navegação */
+.gCarrosel_balls {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.gCarrosel_ball {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-base-white);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.gCarrosel_ball.active {
+    background-color: var(--color-amarelo-arcca);
+    opacity: 1;
+}
+
+/* Area da Imagem personalizada com filtros */
+
+.galeira_background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 24;
+    top: 0;
+    left: 0;
+}
+
+.galeria_backgroundImg_overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 22;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-overlay-black_1);
+    box-shadow: inset 0 0 500px 20px #000000fb;
+}
+
+.galeria_backgroundImg {
+    filter: grayscale(100%);
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.faixaV2_filter {
+    width: 33.3%;
+    height: 100%;
+    z-index: 21;
+    position: absolute;
+    top: 0;
+    opacity: 0.6;
+}
+.fv2_1 {
+    left: 0;
+    background-color: var(--color-verde-arcca);
+}
+.fv2_2 {
+    left: 33.3%;
+    background-color: var(--color-amarelo-arcca);
+}
+.fv2_3 {
+    left: 66.3%;
+    background-color: var(--color-vermelho-arcca);
+}
+
+}
+
+/* Area para Ver mais da Galeria */
+
+.btn_galeria_verMais {
+    display: flex;
+}
