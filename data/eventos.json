@@ -1,0 +1,47 @@
+{
+    "07-03-2025": {
+        "dia": 7,
+        "mes": 3,
+        "ano": 2025,
+        "status": "on",
+        "titulo": "Evento Legal",
+        "descricao": "Bla Bla Bla",
+        "link": "https://exemplo.com"
+    },
+    "12-03-2025": {
+        "dia": 12,
+        "mes": 3,
+        "ano": 2025,
+        "status": "on",
+        "titulo": "Evento Legal",
+        "descricao": "Bla Bla Bla",
+        "link": "https://exemplo.com"
+    },
+    "15-03-2025": {
+        "dia": 15,
+        "mes": 3,
+        "ano": 2025,
+        "status": "will",
+        "titulo": "Futuro Evento",
+        "descricao": "Isso vai acontecer em breve!",
+        "link": "https://evento.com"
+    },
+    "27-03-2025": {
+        "dia": 27,
+        "mes": 3,
+        "ano": 2025,
+        "status": "off",
+        "titulo": "Evento Legal",
+        "descricao": "Bla Bla Bla",
+        "link": "https://exemplo.com"
+    },
+    "13-04-2025": {
+        "dia": 13,
+        "mes": 4,
+        "ano": 2025,
+        "status": "on",
+        "titulo": "Futuro Evento",
+        "descricao": "Isso vai acontecer em breve!",
+        "link": "https://evento.com"
+    }
+}

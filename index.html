@@ -236,19 +236,33 @@
                                 <ion-icon class="calenOpt_charArrow" name="chevron-back-outline"></ion-icon>
                             </div>
                             <div class="calenOpt_info">
-                                <h2 id="calendario-opt-mesSelecionado">Fevereiro</h2>
-                                <h2 id="calendario-opt-anoSelecionado">2025</h2>
+                                <h2 id="calendario-opt-mesSelecionado"></h2>
+                                <h2 id="calendario-opt-anoSelecionado"></h2>
                             </div>
                             <div id="calendario-opt-nextBtn" class="calenOpt_btn">
                                 <ion-icon class="calenOpt_charArrow" name="chevron-forward-outline"></ion-icon>
                             </div>
                         </div>
 
-                        <div aria-diaSelecCalendario="07" aria-dateCalendario="03-2025" id="calendarioDias" class="calendario_dias">
-                            nao sei como vou fazer, estou LASCADO e MUITO
-                        </div>
+                        <ul id="calendarioWeeks" class="calendario_weeks">
+                            <li>Seg</li>
+                            <li>Ter</li>
+                            <li>Qua</li>
+                            <li>Qui</li>
+                            <li>Sex</li>
+                            <li>Sab</li>
+                            <li>Dom</li>
+                        </ul>
+
+                        <ul aria-diaSelecCalendario="07" aria-dateCalendario="03-2025" id="calendarioDias" class="calendario_dias">
+                            <!-- <li aria-dia="1" aria-mes="3" aria-ano="2025" class="i_day" id="iDay-1-2-2025">1</li> -->
+                        </ul>
 
                         <div id="calendarioSumario" class="calendario_sumario">
+                            <div class="calendaSum calendaSum_0">
+                                <div class="calendaSum_fig calendaSum_fig_0"></div>
+                                <p class="calendaSum_text">Dia Atual</p>
+                            </div>
                             <div class="calendaSum calendaSum_1">
                                 <div class="calendaSum_fig calendaSum_fig_1"></div>
                                 <p class="calendaSum_text">Irá ocorrer</p>
@@ -276,20 +290,24 @@
                     </div>
 
                     <div class="evento_dataCompleta" id="evento-dataCompleta" aria-diaSelecEvento="07" aria-dateSelecEvento="03-2025">
-                        <p class="bold" id="calenSelec-dataParcial-dia">07</p>
+                        <p class="bold" id="eventSelec-dataParcial-dia">0</p>
                         <p>de</p>
-                        <p class="bold" id="calenSelec-dataParcial-mes">Fevereiro</p>
+                        <p class="bold" id="eventSelec-dataParcial-mes">.</p>
                         <p>de</p>
-                        <p class="bold" id="calenSelec-dataParcial-ano">2025</p>
+                        <p class="bold" id="eventSelec-dataParcial-ano">0000</p>
+                    </div>
+
+                    <div class="eventoSelecionado_eventTitle">
+                        <h3 id="eventSelec-eventTitle">.</h3>
                     </div>
 
                     <div class="eventoSelecionado_descricaoEvento">
-                        <p id="calenSelec-descricaoEvento">Descrição do eventos do dia Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem omnis quaerat ea facilis, consectetur quasi neque qui similique quo, eius nostrum illo obcaecati incidunt id tenetur est iusto minus!</p>
+                        <p id="eventSelec-eventDesc">.</p>
                     </div>
 
                     <div class="eventoSelecionado_vejaMaisSympla">
                         <h3>Veja mais no <span>SYMPLA</span>:</h3>
-                        <a class="hoverAnimation_botFromMid" href="#" target="_blank">linkslinkslinks</a>
+                        <a id="eventSelec-eventLink" class="hoverAnimation_botFromMid" href="#" target="_blank">.</a>
                     </div>
 
                 </div>

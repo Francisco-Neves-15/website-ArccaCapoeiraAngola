@@ -43,9 +43,11 @@
     padding: 8px;
 }
 
-.agenda_area_g1, 
+.agenda_area_g1 {
+    width: 40%;
+}
 .agenda_area_g2 {
-    width: 48%;
+    width: 50%;
 }
 
 .agenda_middleLine {
@@ -70,7 +72,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 24px;
+    gap: 12px;
 }
 
 /* Opções do Calendário */
@@ -125,12 +127,131 @@
     font-size: 28px;
 }
 
+/* Semanas do Calendário */
+
+.calendario_weeks {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    align-items: center;
+    justify-items: center;
+}
+.calendario_weeks li {
+    color: var(--color-base-black);
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+}
+
 /* !!! ============= Dias do Calendário */
+
 
 .calendario_dias {
     width: 100%;
-    height: auto;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    align-items: center;
+    justify-items: center;
 }
+
+.calendario_dias li {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid var(--color-base-black);
+    color: var(--color-base-black);
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    transition: all .3s ease-in-out;
+}
+
+/* Itens da Lista : Dia */
+.calendario_dias li:hover {
+    background-color: var(--color-bg-light-hover);
+}
+
+/* Itens da Lista | Dia de Hoje */
+.calendario_dias li.diaHoje {
+    background-color: var(--color-azul-arcca-transparent);
+    color: var(--color-base-white);
+    border: 2px solid transparent;
+}
+.calendario_dias li.diaHoje:hover {
+    background-color: var(--color-azul-arcca);
+}
+
+/* Itens da Lista | Dia de Hoje e Evento no mesmo Dia */
+.calendario_dias li.eventDiaHoje {
+    background: var(--color-verdeAzul-arcca-transparent);
+    color: var(--color-base-white);
+    border: 2px solid transparent;
+}
+.calendario_dias li.eventDiaHoje:hover {
+    background: var(--color-verdeAzul-arcca);
+}
+
+/* Itens da Lista | Evento já ocorreu */
+.calendario_dias li.eventOff {
+    background-color: var(--color-vermelho-arcca-transparent);
+    color: var(--color-base-white);
+    border: 2px solid transparent;
+}
+.calendario_dias li.eventOff:hover {
+    background-color: var(--color-vermelho-arcca);
+}
+/* Itens da Lista | Evento a ser marcado */
+.calendario_dias li.eventWill {
+    background-color: var(--color-amarelo-arcca-transparent);
+    color: var(--color-base-black);
+    border: 2px solid transparent;
+}
+.calendario_dias li.eventWill:hover {
+    background-color: var(--color-amarelo-arcca);
+}
+/* Itens da Lista | Evento irá ocorrer */
+.calendario_dias li.eventOn {
+    background-color: var(--color-verde-arcca-transparent);
+    color: var(--color-base-white);
+    border: 2px solid transparent;
+}
+.calendario_dias li.eventOn:hover {
+    background-color: var(--color-verde-arcca);
+}
+
+/* Itens da Lista : Dia que não existe, item vazio */
+.calendario_dias li.empty {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.i_day_select {
+    position: relative;
+    border: 2px var(--color-base-black) solid !important;
+    /* border-radius: 50% !important; */
+    box-shadow: 0 0 16px 0px var(--color-base-black) !important;
+}
+/* .i_day_select::before {
+    content: "";
+    position: absolute;
+    z-index: 101;
+    width: 110%;
+    height: 2px;
+    background-color: var(--color-base-black);
+    border-radius: 4px;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+} */
 
 /* Sumário do Calendário */
 
@@ -157,6 +278,9 @@
     height: 24px;
     background-color: var(--color-base-black);
     border-radius: 4px;
+}
+.calendaSum_fig_0 {
+    background-color: var(--color-azul-arcca);
 }
 .calendaSum_fig_1 {
     background-color: var(--color-verde-arcca);
@@ -218,6 +342,25 @@
 .evento_dataCompleta p.bold {
     font-weight: bold;
     font-size: 18px;
+}
+
+/* Descrição do Evento */
+
+.eventoSelecionado_eventTitle {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0 0 0;
+    letter-spacing: 2px;
+}
+.eventoSelecionado_eventTitle h3 {
+    color: var(--color-base-black);
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
 }
 
 /* Descrição do Evento */

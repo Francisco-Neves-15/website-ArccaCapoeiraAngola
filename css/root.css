@@ -22,6 +22,16 @@
     --color-vermelho-arcca: #8F0100;
     --color-amarelo-arcca: #FDCB0F;
     --color-verde-arcca: #016A33;
+
+    --color-vermelho-arcca-transparent: #8F0100cd;
+    --color-amarelo-arcca-transparent: #FDCB0Fcd;
+    --color-verde-arcca-transparent: #016a34cd;
+
+    --color-azul-arcca: #013b6a;
+    --color-azul-arcca-transparent: #013b6acd;
+    
+    --color-verdeAzul-arcca: linear-gradient(90deg, rgba(1,106,51,1) 0%, rgba(1,59,106,1) 100%);
+    --color-verdeAzul-arcca-transparent: linear-gradient(90deg, rgba(1,106,51,0.7) 0%, rgba(1,59,106,0.7) 100%);
     
     --color-bg-light-hover: #1212122f;
     --color-bg-dark-hover: #f4f4f42f;
