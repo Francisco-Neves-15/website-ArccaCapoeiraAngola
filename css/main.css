@@ -32,6 +32,10 @@ h2 {
     letter-spacing: 4px;
 }
 
+h3 {
+    font-family: var(--font-poppins);
+}
+
 p {
     font-weight: 500;
     font-family: var(--font-poppins);
@@ -52,6 +56,37 @@ ul {
 ul li {
     font-weight: 500;
     font-family: var(--font-poppins);
+}
+
+/* Gerais para Todos ================================================= */
+
+/* Texto quando selecionamos com o Mouse */
+::selection {
+    background-color: var(--color-vermelho-arcca);
+    color: var(--color-base-white);
+}
+
+/* Barra Lateral ================================================= */
+
+/* Tamanho da Barra */
+::-webkit-scrollbar {
+    width: 12px;
+}
+  
+/* Fundo da Area da Barra */
+::-webkit-scrollbar-track {
+    background: var(--color-bg-light-hover);
+}
+
+/* Cor da Barra Normal */
+::-webkit-scrollbar-thumb {
+    background: var(--color-cinza);
+    border-radius: 4px;
+}
+
+/* Cor da Barra quando com Mouse em Cima */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-vermelho-arcca);
 }
 
 /* Elementos que possuem Tooltips */

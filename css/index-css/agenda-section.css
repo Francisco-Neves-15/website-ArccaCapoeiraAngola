@@ -7,13 +7,269 @@
     width: 100%;
     height: auto;
     position: relative;
-    background-color: red;
     margin-top: 40px;
     margin-bottom: 40px;
     padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
 }
 
+/* Area do Titulo */
 
+.agenda_title {
+    width: 100%;
+    padding: 8px;
+}
+
+.agenda_title h1 {
+    color: var(--color-base-black);
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+/* Configurações Gerais */
+
+.agenda_area_g {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* Faz todos os filhos terem a altura do maior elemento */
+    align-items: stretch; 
+    padding: 8px;
+}
+
+.agenda_area_g1, 
+.agenda_area_g2 {
+    width: 48%;
+}
+
+.agenda_middleLine {
+    background-color: var(--color-base-black);
+    width: 2px;
+}
+
+/* Area da Agenda 1 - Area do Calendario  */
+
+.agenda_area_g1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Area do Calendario */
+
+.calendario {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Opções do Calendário */
+
+.calendario_options {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botões do Calendário */
+
+.calenOpt_btn {
+    height: 100%;
+    /* Mantém a proporção 1:1 (quadrado) */
+    aspect-ratio: 1/1; 
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all .3s ease-in-out;
+}
+.calenOpt_btn .calenOpt_charArrow {
+    font-size: 20px;
+    font-weight: normal;
+    font-family: var(--font-stardosstencil);
+    scale: 1.6;
+}
+.calenOpt_btn:hover {
+    background-color: var(--color-bg-light-hover);
+}
+
+/* Texto/Nome do Mês do Calendário */
+
+.calenOpt_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.calenOpt_info h2 {
+    color: var(--color-base-black);
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+/* !!! ============= Dias do Calendário */
+
+.calendario_dias {
+    width: 100%;
+    height: auto;
+}
+
+/* Sumário do Calendário */
+
+.calendario_sumario {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.calendaSum {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    gap: 8px;
+}
+
+.calendaSum_fig {
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-base-black);
+    border-radius: 4px;
+}
+.calendaSum_fig_1 {
+    background-color: var(--color-verde-arcca);
+}
+.calendaSum_fig_2 {
+    background-color: var(--color-amarelo-arcca);
+}
+.calendaSum_fig_3 {
+    background-color: var(--color-vermelho-arcca);
+}
+
+.calendaSum .calendaSum_text {
+    color: var(--color-base-black);
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Area da Agenda 2 - Area dos Eventos  */
+
+.agenda_area_g2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Titulo Eventos do Dia */
+
+.eventoSelecionado_title {
+    width: 100%;
+    height: auto;
+}
+.eventoSelecionado_title h2 {
+    color: var(--color-base-black);
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+/* Mes selecionado no Evento */
+
+.evento_dataCompleta {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.evento_dataCompleta p {
+    color: var(--color-base-black);
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+}
+.evento_dataCompleta p.bold {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Descrição do Evento */
+
+.eventoSelecionado_descricaoEvento {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 16px 0;
+}
+.eventoSelecionado_descricaoEvento p {
+    color: var(--color-base-black);
+    text-align: left;
+    font-weight: 500;
+    font-size: 16px;
+    text-wrap: pretty;
+    text-indent: 16px;
+}
+
+/* Veja mais no SYMPLA !Temp */
+
+.eventoSelecionado_vejaMaisSympla {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px;
+}
+.eventoSelecionado_vejaMaisSympla h3 {
+    color: var(--color-base-black);
+    text-align: center;
+    font-weight: normal;
+    font-size: 20px;
+}
+.eventoSelecionado_vejaMaisSympla h3 span {
+    font-weight: bold;
+}
+
+.eventoSelecionado_vejaMaisSympla a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-verde-arcca);
+}
+.eventoSelecionado_vejaMaisSympla a.hoverAnimation_botFromMid::before {
+    bottom: 0px;
+    background-color: var(--color-verde-arcca);
+}
 
 /* Mobile ============================================= */
 

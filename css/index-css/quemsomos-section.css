@@ -126,7 +126,11 @@
     overflow: visible; 
     /* Adiciona as reticências (...) quando o texto ultrapassa o limite */
     text-overflow: ellipsis; 
-    /* Impede que o texto quebre em várias linhas */
+    display: flex;    
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
 }
 
 .quemsomos_desc p {
@@ -137,7 +141,6 @@
     letter-spacing: 1px;
     line-height: 1.5;
     text-wrap: pretty;
-    /* Impede o texto de ultrapassar a caixa */
     overflow-y: hidden; 
     /* Exibe as reticências quando o texto é cortado */
     text-overflow: ellipsis;
@@ -274,6 +277,7 @@
 
 .sec_quemsomos_area2 {
     width: 100%;
+    height: 50%;
     padding: 16px;
 }
 
@@ -296,6 +300,7 @@
     width: 100%;
     padding: 4px;
     max-height: 100%;
+    gap: 12px;
 }
 
 .quemsomos_desc p {
@@ -319,14 +324,14 @@
 /* Area do Carrosel */
 
 .quemsomos_carrosel {
-    height: 80%;
+    height: 100%;
 }
 
 .carrosel {
     width: 90%;
-    height: 80%;
+    height: 90%;
     border-radius: 12px;
-    box-shadow: 0 0 100px 6px #000000;
+    box-shadow: 0 0 20px 2px #000000;
 }
 
 .carrosel_imgs {

@@ -200,7 +200,7 @@
 
 .list_social .hoverAnimation_botFromMid::before {
     background-color: var(--color-base-black);
-    bottom: -2px;
+    bottom: -5px;
 }
 
 /* ========================================================================= */

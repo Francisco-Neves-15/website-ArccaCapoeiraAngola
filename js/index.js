@@ -114,6 +114,38 @@ function open_galeriaVerMais(tipo) {
     let htmlTag = document.documentElement;
     let device = htmlTag.getAttribute("device");
 
+    function style_openVerMais() {
+        console.log("⚙ Abrindo (Galeria: ver mais)")
+        // Aumenta o Tamanho
+        section_galeria.style.height = config_big
+        section_galeria.style.maxHeight = config_big
+        // Gira os Icones
+        icon_arrowUpL.classList.remove(class_rotateP180l)
+        icon_arrowUpR.classList.remove(class_rotateP180r)
+        // Altera o Status
+        btn_galeria_verMais.setAttribute("aria-status", "true")
+        // Mostra a Parte escondida
+        galeria_areaG2_3.style.display = "flex"
+        // Altera o Texto Referente
+        text_galeriaVerMais.textContent = pre_text_p2
+    }
+
+    function style_closeVerMais() {
+        console.log("⚙ Fechando (Galeria: ver mais)")
+        // Aumenta o Tamanho
+        section_galeria.style.height = config_small
+        section_galeria.style.maxHeight = config_small
+        // Gira os Icones
+        icon_arrowUpL.classList.add(class_rotateP180l)
+        icon_arrowUpR.classList.add(class_rotateP180r)
+        // Altera o Status
+        btn_galeria_verMais.setAttribute("aria-status", "false")
+        // Mostra a Parte escondida
+        galeria_areaG2_3.style.display = "none"
+        // Altera o Texto Referente
+        text_galeriaVerMais.textContent = pre_text_p1
+    }
+
     // Apenas volta para configuração padrão se encontrar
     if (tipo === "default") {
         // Arruma o Tamanho
@@ -133,43 +165,27 @@ function open_galeriaVerMais(tipo) {
         galeria_areaG2_3.style.display = "flex"
         // Altera o Texto Referente
         text_galeriaVerMais.textContent = pre_text_p1
+        // Fecha para Garantir "Mobile"
+        if (btn_status === "true" && device === "mobile") {
+            style_closeVerMais()
+        }
+        if (btn_status === "false" && device === "mobile") {
+            style_closeVerMais()
+        }
+        return
     }
 
     if (btn_status === "false" && device === "mobile") {
-        console.log("111")
-        // Aumenta o Tamanho
-        section_galeria.style.height = config_big
-        section_galeria.style.maxHeight = config_big
-        // Gira os Icones
-        icon_arrowUpL.classList.remove(class_rotateP180l)
-        icon_arrowUpR.classList.remove(class_rotateP180r)
-        // Altera o Status
-        btn_galeria_verMais.setAttribute("aria-status", "true")
-        // Mostra a Parte escondida
-        galeria_areaG2_3.style.display = "flex"
-        // Altera o Texto Referente
-        text_galeriaVerMais.textContent = pre_text_p2
+        style_openVerMais()
     } else if (btn_status === "true" && device === "mobile") {
-        console.log("222")
-        // Aumenta o Tamanho
-        section_galeria.style.height = config_small
-        section_galeria.style.maxHeight = config_small
-        // Gira os Icones
-        icon_arrowUpL.classList.add(class_rotateP180l)
-        icon_arrowUpR.classList.add(class_rotateP180r)
-        // Altera o Status
-        btn_galeria_verMais.setAttribute("aria-status", "false")
-        // Mostra a Parte escondida
-        galeria_areaG2_3.style.display = "none"
-        // Altera o Texto Referente
-        text_galeriaVerMais.textContent = pre_text_p1
+        style_closeVerMais()
     }
 
     // Espera 250ms antes de rolar para o elemento
     setTimeout(() => {
         let elementPosition = btn_galeria_verMais.getBoundingClientRect().top + window.scrollY;
         elementPosition = elementPosition - 700
-        if (device === "mobile") {
+        if (device === "mobile" && tipo !== "default") {
             window.scrollTo({ top: elementPosition, behavior: "smooth" });
         }
     }, 250);

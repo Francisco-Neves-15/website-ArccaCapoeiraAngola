@@ -60,7 +60,15 @@
                         <h1>Quem somos?</h1>
                     </div>
                     <div class="quemsomos_area1_g quemsomos_desc">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt corporis magnam necessitatibus hic voluptatibus, dolor perspiciatis voluptate ratione quae culpa nesciunt eius nulla aliquid libero impedit ducimus debitis totam quod! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, et illo soluta fuga ab dolor perspiciatis quia repellat architecto ratione, voluptate nemo rerum illum, harum aliquid! Ullam beatae impedit mollitia explicabo natus laboriosam harum nisi, nemo maxime facilis qui ratione ipsa, voluptas tenetur accusamus, quis inventore. Fugiat magni provident cum. lorem100</p>
+                        <p>
+                            Fundada em 2008, a ARCCA desenvolve um trabalho de preservação da cultura afro-brasileira, promovendo oficinas de capoeira Angola, samba de roda, maculelê e bumba-meu-boi em Rio Preto e outras regiões do país.
+                        </p>
+                        <p>
+                            Além da unidade no Jardim Nazareth, a ARCCA atua em outros espaços com cinco professores voluntários, oferecendo aulas gratuitas de capoeira para todas as idades em locais como Estância São Carlos, Cedral e Mirassol.
+                        </p>
+                        <p>
+                            O impacto da capoeira vai além da arte marcial: ela fortalece a identidade cultural, promove inclusão social e estimula a autoestima. Nossa escola reúne profissionais de diversas áreas, como teatro, música e assistência social, ampliando o alcance de nossas atividades.
+                        </p>
                     </div>
                     <div class="quemsomos_area1_g quemsomos_img">
                         <img src="midia/logos/logo_arcca_full.png" alt="">
@@ -117,7 +125,7 @@
                             <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
                                 <script>
                                     (function () {
-                                        var setting = {"query":"Escola de Capoeira Angola ARCCA","width":400,"height":300,"satellite":true,"zoom":17,"placeId":"ChIJ6Sws2sBTvJQRcMduhG74JK0","cid":"0xad24f86e846ec770","coords":[-20.7841483,-49.3576467],"cityUrl":"/brazil/sao-jose-do-rio-preto-19787","cityAnchorText":"Mapa de São José do Rio Preto, Sao Paulo, Brasil","lang":"pt","queryString":"Escola de Capoeira Angola ARCCA","centerCoord":[-20.7841483,-49.3576467],"id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"1197133"};
+                                        var setting = {"query":"Escola de Capoeira Angola ARCCA","width":400,"height":300,"satellite":true,"zoom":19,"placeId":"ChIJ6Sws2sBTvJQRcMduhG74JK0","cid":"0xad24f86e846ec770","coords":[-20.7841483,-49.3576467],"cityUrl":"/brazil/sao-jose-do-rio-preto-19787","cityAnchorText":"Mapa de São José do Rio Preto, Sao Paulo, Brasil","lang":"pt","queryString":"Escola de Capoeira Angola ARCCA","centerCoord":[-20.7841483,-49.3576467],"id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"1197133"};
                                         var d = document;
                                         var s = d.createElement('script');
                                         s.src = 'https://1map.com/js/script-for-user.js?embed_id=1197133';
@@ -221,15 +229,22 @@
 
                 <div class="agenda_area_g1">
 
-                    <div  id="calendario" class="calendario">
+                    <div id="calendario" class="calendario">
 
                         <div id="calendarioOptions" class="calendario_options">
-                            <div id="calendario-opt-prevBtn" class="calenOpt_btn"></div>
-                            <h2 id="calendario-opt-mesSelecionado">Fevereiro</h2>
-                            <div id="calendario-opt-nextBtn" class="calenOpt_btn"></div>
+                            <div id="calendario-opt-prevBtn" class="calenOpt_btn">
+                                <ion-icon class="calenOpt_charArrow" name="chevron-back-outline"></ion-icon>
+                            </div>
+                            <div class="calenOpt_info">
+                                <h2 id="calendario-opt-mesSelecionado">Fevereiro</h2>
+                                <h2 id="calendario-opt-anoSelecionado">2025</h2>
+                            </div>
+                            <div id="calendario-opt-nextBtn" class="calenOpt_btn">
+                                <ion-icon class="calenOpt_charArrow" name="chevron-forward-outline"></ion-icon>
+                            </div>
                         </div>
 
-                        <div id="calendarioDias" class="calendario_dias">
+                        <div aria-diaSelecCalendario="07" aria-dateCalendario="03-2025" id="calendarioDias" class="calendario_dias">
                             nao sei como vou fazer, estou LASCADO e MUITO
                         </div>
 
@@ -256,21 +271,25 @@
 
                 <div class="agenda_area_g2">
 
-                    <div class="calendarioSelecionado_title">
+                    <div class="eventoSelecionado_title">
                         <h2>Eventos do Dia</h2>
                     </div>
 
-                    <div class="calendarioSelecionado_dataCompleta">
-                        <h3 id="calenSelec-dataCompleta">31 de Fevereiro de 2025</h3>
+                    <div class="evento_dataCompleta" id="evento-dataCompleta" aria-diaSelecEvento="07" aria-dateSelecEvento="03-2025">
+                        <p class="bold" id="calenSelec-dataParcial-dia">07</p>
+                        <p>de</p>
+                        <p class="bold" id="calenSelec-dataParcial-mes">Fevereiro</p>
+                        <p>de</p>
+                        <p class="bold" id="calenSelec-dataParcial-ano">2025</p>
                     </div>
 
-                    <div class="calendarioSelecionado_descricaoEvento">
-                        <p id="calenSelec-descricaoEvento">Eventos do Dia</p>
+                    <div class="eventoSelecionado_descricaoEvento">
+                        <p id="calenSelec-descricaoEvento">Descrição do eventos do dia Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem omnis quaerat ea facilis, consectetur quasi neque qui similique quo, eius nostrum illo obcaecati incidunt id tenetur est iusto minus!</p>
                     </div>
 
-                    <div class="calendarioSelecionado_vejaMaisSympla">
-                        <h3>Veja mais no <span>SYMPLA</span></h3>
-                        <a href="#" target="_blank">Links Links Links</a>
+                    <div class="eventoSelecionado_vejaMaisSympla">
+                        <h3>Veja mais no <span>SYMPLA</span>:</h3>
+                        <a class="hoverAnimation_botFromMid" href="#" target="_blank">linkslinkslinks</a>
                     </div>
 
                 </div>

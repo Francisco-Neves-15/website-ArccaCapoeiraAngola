@@ -33,10 +33,10 @@ async function detec_device() {
     let htmlTag = document.documentElement;
     // Verifica se a largura da tela é 500px ou menor
     if (window.innerWidth <= 500) {
-        console.log("Tela de Mobile")
+        console.log("🔍 Detec (Tela: Mobile)")
         htmlTag.setAttribute("device", "mobile");
     } else if (window.innerWidth >= 501) {
-        console.log("Tela de Desktop")
+        console.log("🔍 Detec (Tela: Desktop)")
         htmlTag.setAttribute("device", "desktop");
     }
     open_galeriaVerMais("default")
