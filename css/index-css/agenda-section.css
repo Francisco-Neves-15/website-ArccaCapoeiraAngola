@@ -392,7 +392,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 0px;
+    gap: 12px;
 }
 .eventoSelecionado_vejaMaisSympla h3 {
     color: var(--color-base-black);
@@ -406,8 +406,10 @@
 
 .eventoSelecionado_vejaMaisSympla a {
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     color: var(--color-verde-arcca);
+    font-family: var(--font-poppins);
+    font-size: 16px;
 }
 .eventoSelecionado_vejaMaisSympla a.hoverAnimation_botFromMid::before {
     bottom: 0px;
