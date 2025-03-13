@@ -76,17 +76,17 @@ const carrosseis = [
     {
         id: "gCarrosel1",
         imagens: [
-            { link: "..\\midia\\images\\normals\\imagem01-preferencia.jpg" },
-            { link: "..\\midia\\images\\normals\\imagem02-aleatoria.webp" },
-            { link: "..\\midia\\images\\normals\\imagem03-aleatoria.webp" }
+            { link: ".\\midia\\images\\normals\\imagem01-preferencia.jpg" },
+            { link: ".\\midia\\images\\normals\\imagem02-aleatoria.webp" },
+            { link: ".\\midia\\images\\normals\\imagem03-aleatoria.webp" }
         ]
     },
     {
         id: "gCarrosel2",
         imagens: [
-            { link: "..\\midia\\images\\normals\\imagem04-aleatoria.webp" },
-            { link: "..\\midia\\images\\normals\\imagem05-aleatoria.webp" },
-            { link: "..\\midia\\images\\normals\\imagem06-preferencia.webp" }
+            { link: ".\\midia\\images\\normals\\imagem04-aleatoria.webp" },
+            { link: ".\\midia\\images\\normals\\imagem05-aleatoria.webp" },
+            { link: ".\\midia\\images\\normals\\imagem06-preferencia.webp" }
         ]
     }
 ];

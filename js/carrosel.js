@@ -130,16 +130,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Exemplo de dados para as imagens (com nomes com prioridade)
     const imagens = [
-        { link: "..\\midia\\images\\normals\\imagem01-preferencia.jpg" },
-        { link: "..\\midia\\images\\normals\\imagem02-aleatoria.webp" },
-        { link: "..\\midia\\images\\normals\\imagem03-aleatoria.webp" },
-        { link: "..\\midia\\images\\normals\\imagem04-aleatoria.webp" },
-        { link: "..\\midia\\images\\normals\\imagem05-aleatoria.webp" },
-        { link: "..\\midia\\images\\normals\\imagem06-preferencia.webp" },
-        { link: "..\\midia\\images\\normals\\imagem07-aleatoria.webp" },
-        { link: "..\\midia\\images\\normals\\imagem08-preferencia.webp" },
-        { link: "..\\midia\\images\\normals\\imagem09-aleatoria.webp" },
-        { link: "..\\midia\\images\\normals\\imagem10-aleatoria.webp" },
+        { link: ".\\midia\\images\\normals\\imagem01-preferencia.jpg" },
+        { link: ".\\midia\\images\\normals\\imagem02-aleatoria.webp" },
+        { link: ".\\midia\\images\\normals\\imagem03-aleatoria.webp" },
+        { link: ".\\midia\\images\\normals\\imagem04-aleatoria.webp" },
+        { link: ".\\midia\\images\\normals\\imagem05-aleatoria.webp" },
+        { link: ".\\midia\\images\\normals\\imagem06-preferencia.webp" },
+        { link: ".\\midia\\images\\normals\\imagem07-aleatoria.webp" },
+        { link: ".\\midia\\images\\normals\\imagem08-preferencia.webp" },
+        { link: ".\\midia\\images\\normals\\imagem09-aleatoria.webp" },
+        { link: ".\\midia\\images\\normals\\imagem10-aleatoria.webp" },
     ];
 
     // Preencher o carrossel com as imagens
