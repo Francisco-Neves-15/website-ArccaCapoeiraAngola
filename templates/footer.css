@@ -233,7 +233,7 @@ footer {
 footer {
     width: 100%;
     height: auto;
-    padding: 24px 8px;
+    padding: 20px 8px;
 }
 
 .footer_content {
@@ -244,7 +244,7 @@ footer {
     flex-direction: column;
     justify-content: flex-start; 
     align-items: center; 
-    gap: 24px;
+    gap: 16px;
 }
 
 .footer_content > * {
@@ -276,6 +276,10 @@ footer {
     justify-content: center;
 }
 
+.footer_social_list_i .social_logos_bg {
+    opacity: 1;
+}
+
 /* Area do Developed */
 
 .footer_developed {
@@ -301,7 +305,7 @@ footer {
     position: relative;
     z-index: 103;
     color: var(--color-base-white);
-    font-size: 12px;
+    font-size: 16px;
     padding: 0px 6px;
 }
 

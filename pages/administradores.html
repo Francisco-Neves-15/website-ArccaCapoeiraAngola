@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>ARCCA | Administradores</title>
+
+    <!-- Chamando o CSS Principal -->
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='../css/main.css'> -->
+    <!-- Chamando o CSS Root BASE (Cores e Estilos) -->
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/root.css'>
+    <!-- Chamando o CSS Root, ou do tema Claro ou Escuro | Padrão em caso de erro: default -->
+    <link id="root-tema-stylesheet" rel="stylesheet" href="../css/root-default.css">
+
+    <!-- Importações do Biblioteca Ion-Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <!-- Estilizações CSS -->
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            width: 100%;
+        }
+        
+        body {
+            background-color: var(--tema-page_fundoPri);
+            padding: 24px;
+            width: 100%;
+            height: auto;
+            overflow-x: hidden;
+            overflow-y: visible;
+        }
+        
+        /* Algumas configurações Gerais */
+        
+        h1 {
+            font-family: var(--font-stardosstencil);
+            font-weight: bold;
+        }
+        
+        h2 {
+            font-family: var(--font-stardosstencil);
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        
+        h3 {
+            font-family: var(--font-stardosstencil);
+            font-weight: bold;
+        }
+        
+        p {
+            font-family: var(--font-poppins);
+            font-weight: 500;
+        }
+        
+        span {
+            font-weight: bold;
+        }
+        
+        a {
+            font-family: var(--font-poppins);
+            text-decoration: underline;
+            color: #0059ff;
+        }
+        
+        ul {
+            list-style: disc;
+        }
+        ul li {
+            font-family: var(--font-poppins);
+            margin-left: 16px;
+            font-size: 16px;
+        }
+        
+        /* Evita que o conteúdo das células expanda a tabela */
+        table {
+            table-layout: fixed;
+            margin-top: 24px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table tr th {
+            background-color: var(--color-bg-dark_1);
+            color: var(--color-base-white);
+            text-align: left;
+            font-size: 20px;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        
+        table tr:nth-child(odd) {
+            background-color: #dadada;
+        }
+
+        table th, table td {
+            font-weight: normal;
+            font-family: var(--font-poppins);
+            padding: 12px;
+            border: 1px solid var(--color-bg-light-hover);
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        table th {
+            font-weight: bold;
+        }
+        table td {
+            font-weight: normal;
+        }
+        table td p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        button {
+            padding: 4px 8px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 0px rgba(0,0,0,1);
+        }
+        button:active {
+            transform: translateY(4px);
+            box-shadow: 0px 0px 0px rgba(0,0,0,1);
+        }
+
+        section {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        ion-icon {
+            color: var(--color-base-black);
+            font-size: 24px; 
+        }
+
+        /* Define tamanhos individuais para cada coluna */
+        /* ID */
+        th:nth-child(1), td:nth-child(1) { max-width: 10%; width: 10%; }  
+        /* Data */
+        th:nth-child(2), td:nth-child(2) { width: 10%; }  
+        /* Status */
+        th:nth-child(3), td:nth-child(3) { width: 5%; }  
+        /* Título */
+        th:nth-child(4), td:nth-child(4) { width: auto; }  
+        /* Descrição */
+        th:nth-child(5), td:nth-child(5) { width: auto; }  
+        /* Link */
+        th:nth-child(6), td:nth-child(6) { width: auto; }  
+        /* Ações */
+        th:nth-child(7), td:nth-child(7) { max-width: 15%; width: 15%; }   
+
+    </style> 
+    
+</head>
+<body>
+
+    <h1>ARCCA | Administradores</h1>
+
+    <p>Gerencie as datas dos Eventos, Imagens e outros elementos do site</p>
+
+    <br><br>
+    
+    <h2>Sumário:</h2>
+    
+    <ul>
+        <li>Data do Evento</li>
+        <li>O Status é: ON : Vai acontecer | WILL : Ainda será marcado | OFF: Já Ocorreu</li>
+        <li>Um breve titulo para o evento</li>
+        <li>Uma descrição do evento</li>
+        <li>Link para o SYMPLA se houver</li>
+    </ul>
+    
+    <br><br>
+    
+    <h2>Ações Gerais</h2>
+    <section>
+        <button>
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <p>Novo Evento</p>
+        </button>
+    </section>
+
+    <br>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Status</th>
+            <th>Titulo</th>
+            <th>Descrição</th>
+            <th>Link no SYMPLA</th>
+            <th>Ações</th>
+        </tr>
+        <tr id="001-07032025-0">
+            <td>
+                <p>001-07032025-0</p>
+            </td>
+            <td>
+                <p>07/03/2025</p>
+            </td>
+            <td>
+                <p>on</p>
+            </td>
+            <td>
+                <p>Evento Bacana</p>
+            </td>
+            <td>
+                <p>Uma breve descrição abcdefghijklmnopqrstuvwxyz</p>
+            </td>
+            <td>
+                <a>https://www.w3schools.com/</a>
+            </td>
+            <td>
+                <section>
+                    <button>
+                        <ion-icon name="pencil-outline"></ion-icon>
+                        <p>Editar</p>
+                    </button>
+                    <button>
+                        <ion-icon name="trash-outline"></ion-icon>
+                        <p>Excluir</p>
+                    </button>
+                    
+                </section>
+            </td>
+        </tr>
+        <tr id="001-07032025-0">
+            <td>
+                <p>001-07032025-0</p>
+            </td>
+            <td>
+                <p>07/03/2025</p>
+            </td>
+            <td>
+                <p>on</p>
+            </td>
+            <td>
+                <p>Evento Bacana</p>
+            </td>
+            <td>
+                <p>Uma breve descrição abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz</p>
+            </td>
+            <td>
+                <a>https://www.w3schools.com/</a>
+            </td>
+            <td>
+                <section>
+                    <button>
+                        <ion-icon name="pencil-outline"></ion-icon>
+                        <p>Editar</p>
+                    </button>
+                    <button>
+                        <ion-icon name="trash-outline"></ion-icon>
+                        <p>Excluir</p>
+                    </button>
+                    
+                </section>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

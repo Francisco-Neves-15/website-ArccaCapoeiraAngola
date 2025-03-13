@@ -131,14 +131,16 @@ function autofill_eventoSelecionado(type, evento, mesFormat, newDia, newMes, new
         eventSelec_eventTitle.textContent = evento.titulo;
         eventSelec_eventDesc.textContent = evento.descricao;
         eventSelec_eventLink.setAttribute("href", evento.link);
+        eventSelec_eventLink.setAttribute("target", "_blank");
         eventSelec_eventLink.textContent = "Clique aqui para ir ao SYMPLA";
     } else if (type === "false") {
         // Se não houver evento, exibe mensagem
         console.log(`❌📅 Nenhum evento encontrado para ${newDia}/${newMes}/${newAno}`);
-        
+    
         eventSelec_eventTitle.textContent = "Nenhum evento selecionado";
         eventSelec_eventDesc.textContent = "Nenhuma descrição.";
-        eventSelec_eventLink.setAttribute("href", "#");
+        eventSelec_eventLink.setAttribute("href", "");
+        eventSelec_eventLink.setAttribute("target", "");
         eventSelec_eventLink.textContent = "Nenhum link";
     }
 

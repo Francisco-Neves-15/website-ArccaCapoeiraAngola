@@ -314,20 +314,22 @@
 
 .list_social li:nth-child(odd) {
     /* Alinha os itens ímpares à esquerda */
-    align-self: flex-start;
-    margin-left: 32px;
+    /* align-self: flex-start; */
+    align-self: center;
+    /* margin-left: 32px; */
 }
 .list_social li:nth-child(odd) p, a {
     order: 1;
 }
 .list_social li:nth-child(odd) ion-icon {
-    order: 2;
+    order: 0;
 }
 
 .list_social li:nth-child(even) {
     /* Alinha os itens pares à direita */
-    align-self: flex-end; 
-    margin-right: 32px;
+    /* align-self: flex-end;  */
+    align-self: center;
+    /* margin-right: 32px; */
 }
 .list_social li:nth-child(even) p,a {
     order: 2;
